@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>        
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false" src_type="url"/>
+        <script src="Clarion_Contact::js/map.js"/>
+    </head>
+    <body>
+        <referenceBlock name="contactForm" ifconfig='Clarion/Contact/Helper/Data/getMapEnabled'>
+            <action method="setTemplate">
+                <argument name="template" translate="true" xsi:type="string">Clarion_Contact::form.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

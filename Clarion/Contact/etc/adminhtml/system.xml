@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="map_options" translate="label" sortOrder="10">
+            <label>Contact Form Google Map</label>
+        </tab>
+        <section id="clarion_contact" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Google Map Settings</label>
+            <tab>map_options</tab>
+            <resource>Clarion_Contact::clarion_contact</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>  
+                <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Google Map</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        Enable Google Map on Contact Page.
+                    </comment>
+                </field> 
+                <field id="map_addres" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Address</label>
+                    <!-- <model>Clarion\Contact\Model\Config\Structure\Element\Field</model>-->
+                    <validate>required-entry</validate> 
+                    <comment>                        
+                        <![CDATA[Your Store Address Here.<br />Click<a href ="http://www.latlong.net/convert-address-to-lat-long.html" target="_blank"> Here</a> To Get Latitude and Longitude of your address.]]>
+                    </comment>
+                </field>
+                <field id="map_latt" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Latitude</label>
+                    <validate>required-entry</validate>
+                    <comment>
+                        Your Store Latitude.
+                    </comment>
+                </field>             
+                <field id="map_long" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Longitude</label>
+                    <validate>required-entry</validate>
+                    <comment>
+                        Your Store Longitude.
+                    </comment>
+                </field>
+                <field id="map_height" translate="label" type="text" sortOrder="23"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Map Height</label>
+                    <validate>required-entry</validate>
+                    <comment>
+                        Your Google Map Height. (Enter height without 'px')
+                    </comment>
+                </field>
+                <field id="contact_layout" translate="label" type="select" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Page Layout</label>
+                    <source_model>Clarion\Contact\Model\Config\Source\PageLayout</source_model>
+                    <comment>Choose Page Layout</comment>
+                </field>
+                <field id="map_marker" translate="label" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker Image</label>
+                    <backend_model>Clarion\Contact\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">marker</upload_dir>
+                    <base_url type="media" scope_info="1">marker</base_url>
+                    <validate>required-entry</validate>
+                    <comment><![CDATA[Allowed file types: jpeg, png.]]></comment>
+                </field>                                                
+            </group>
+        </section>
+    </system>
+</config>

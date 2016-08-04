@@ -1,0 +1,29 @@
+{
+    "name": "clarion/contact",
+    "description": "Default Contact Us Page With Google Map",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "Yogesh Pawar",
+            "email": "yogesh.pawar@clariontechnologies.co.in",
+            "homepage": "http://www.clariontechnologies.co.in",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Clarion\\Contact\\": ""
+        }
+    }
+}
